@@ -28,7 +28,7 @@ module Sequel
 
     Database.register_extension(:marginalia){|db|
         db.dataset_class.module_eval do
-            include SequelMarginalia
+            include Marginalia
         end
     }
 end
