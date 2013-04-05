@@ -9,8 +9,8 @@ It just adds comments about caller code to your Sequel SQL queries.
 
 When used, produces SQL like this:
 
-    /* lib/myapp/somefile.rb:40:in `some_method' */
     SELECT COUNT(*) FROM `clients`
+    /* lib/myapp/somefile.rb:40:in `some_method' */
 
 ## Usage
 
@@ -18,7 +18,7 @@ Install it is a gem.
 
 Than just do
 
-    my_database.extension :sequel_marginalia
+    my_database.extension :marginalia
 
 and it's here.
 

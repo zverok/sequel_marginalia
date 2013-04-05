@@ -1,5 +1,5 @@
 module Sequel
-    module SequelMarginalia
+    module Marginalia
         def self.included(dataset_class)
             dataset_class.class_eval do
                 if defined? :execute
@@ -19,14 +19,14 @@ module Sequel
                 first
 
             if comment && !sql.include?(comment)
-                "/* #{comment} */\n#{sql}"
+                "#{sql}\n/* #{comment} */"
             else
                 sql
             end
         end
     end
 
-    Database.register_extension(:sequel_marginalia){|db|
+    Database.register_extension(:marginalia){|db|
         db.dataset_class.module_eval do
             include SequelMarginalia
         end
